@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <Button
+        style="@style/ButtonStyle"
+        android:maxWidth="20dp"
+        android:id="@+id/delete_item"
+        android:textColor="@color/Black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:textSize="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <Button
+
+        style="@style/ButtonStyle"
+        android:textColor="@color/Black"
+        android:id="@+id/update_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:textSize="15dp"
+        android:text="Update"
+        android:layout_below="@+id/delete_item"
+        android:layout_alignLeft="@+id/delete_item"
+        android:layout_alignStart="@+id/delete_item" />
+
+    <EditText
+        android:id="@+id/update_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/update_item"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="new item name..." />
+
+    <EditText
+        android:id="@+id/update_item_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/update_item_name"
+        android:layout_alignRight="@+id/update_item_name"
+        android:layout_below="@+id/update_item_name"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="new item price..." />
+</RelativeLayout>

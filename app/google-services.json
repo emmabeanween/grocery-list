@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "174595441766",
+    "firebase_url": "https://emmas-projects.firebaseio.com",
+    "project_id": "emmas-projects",
+    "storage_bucket": "emmas-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174595441766:android:326b07fd8ec85dc9",
+        "android_client_info": {
+          "package_name": "com.example.emma.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174595441766-cklo1rqbeb9ccj2pps206t3h5libbi4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.emma.chatapp",
+            "certificate_hash": "00015ce90a030f057ff4cbdd933580592bfe719b"
+          }
+        },
+        {
+          "client_id": "174595441766-4kgacem314j2ppuu0076h2klel714ebe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2BOE0YFF1WnBPh2oQlozVFbeHvD01hu0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174595441766-4kgacem314j2ppuu0076h2klel714ebe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
