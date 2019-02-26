@@ -57,6 +57,8 @@ public class GroceryListActivity extends AppCompatActivity {
     private List<GroceryItem> mTotalItems;
 
     private boolean isEmpty(EditText etText) {
+        
+        // a function to see if an edit text input is empty
         if (etText.getText().toString().trim().length() > 0)
             return false;
 
@@ -75,9 +77,7 @@ public class GroceryListActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+     
         int id = item.getItemId();
         switch (id) {
             case R.id.menu_item_new:
@@ -88,8 +88,8 @@ public class GroceryListActivity extends AppCompatActivity {
                 final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
 
                 View dialog_layout = getLayoutInflater().inflate(R.layout.dialog_layout, null);
-                // Create the text field in the alert dialog...
-
+              
+                // get the textviews associated with the alert dialog pop up for the new grocery item
                 final EditText text1 = (EditText) dialog_layout.findViewById(R.id.text1);
                 TextView textview1 = (TextView) dialog_layout.findViewById(R.id.textView);
                 final EditText text2 = (EditText) dialog_layout.findViewById(R.id.text2);
@@ -119,27 +119,21 @@ public class GroceryListActivity extends AppCompatActivity {
                             FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
                             DatabaseReference mReference = mDatabase.getReference("items");
                             String id = mReference.push().getKey();
+                            
+                                                                                                                                            
 
-                            // set value
+                            // set value and add
                             mReference.child(id).setValue(mItem);
                             alertDialog.dismiss();
 
-                            // add to count list
-
-
-
-
-
+                  
 
                         }
                     }
                 });
 
 
-                // set ok button and item
-
-
-                //
+                 // show the alert dialog
                 alertDialog.show();
 
 
@@ -147,6 +141,8 @@ public class GroceryListActivity extends AppCompatActivity {
                 break;
 
             case R.id.my_logout_item:
+                
+                // nothing
 
 
                 break;
@@ -158,7 +154,7 @@ public class GroceryListActivity extends AppCompatActivity {
     }
 
 
-    //////////// begin
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -170,12 +166,13 @@ public class GroceryListActivity extends AppCompatActivity {
 
         ListView list = (ListView) findViewById(R.id.my_list_view);
 
-        // set it to be empty when so
+        // set it to be empty when the grocery list is empty
 
         list.setEmptyView(findViewById(R.id.emptyElement));
 
         // populate the list with the items
 
+        // another way to get a reference to the database
         final DatabaseReference mReference = FirebaseDatabase.getInstance().
                 getReferenceFromUrl("https://emmas-projects.firebaseio.com/items");
 
@@ -207,7 +204,7 @@ public class GroceryListActivity extends AppCompatActivity {
             public void onItemClick(final AdapterView<?> adapterView, View view, final int position, long l) {
 
 
-                // create a pop up where we add a new item
+                // create a pop up where we update a new item
 
                 final AlertDialog alertDialog = new AlertDialog.Builder(GroceryListActivity.this).create();
 
@@ -250,7 +247,7 @@ public class GroceryListActivity extends AppCompatActivity {
                 });
 
 
-                // delete values here with button
+                
                 alertDialog.setButton(Dialog.BUTTON_POSITIVE, "OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -275,29 +272,8 @@ public class GroceryListActivity extends AppCompatActivity {
 
 
 
-                // set ok button and item
-
-
-                //
+          
                 alertDialog.show();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             }
@@ -306,39 +282,9 @@ public class GroceryListActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
